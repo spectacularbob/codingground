@@ -1,0 +1,16 @@
+# Makefile
+LDFLAGS=-lncurses
+
+CC=g++
+CFLAGS=-c
+SOURCES=main.cpp character.cpp drawable.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=game
+
+all: $(SOURCES) $(EXECUTABLE)
+	
+$(EXECUTABLE): $(OBJECTS) 
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
