@@ -4,7 +4,7 @@
 #include "character.h"
 #include "scenery.h"
 #include "dialog.h"
-
+#include "gameConstants.h"
 #define DELAY 30000
 
 World world;
@@ -63,6 +63,23 @@ void initScene()
   dialog.show();
 }
 
+bool checkScreenSize()
+{
+   int x;
+   int y;
+   getmaxyx(stdscr,y,x);
+   if(x < MAX_WIDTH || y < MAX_HEIGHT)
+   {
+     mvprintw(0,0,
+     "The screen is too small, please make it bigger.\nCurrent (%i,%i)\nNeeds to be (%i,%i)"
+     ,x,y,MAX_WIDTH,MAX_HEIGHT);
+     refresh();
+     return false;
+   }
+
+   return true;
+}
+
 int main(int argc, char *argv[]) 
 {
   initscr();
@@ -75,6 +92,11 @@ int main(int argc, char *argv[])
   while(shutDown == false)
   {
     clear();
+    if(checkScreenSize() == false)
+    { 
+      usleep(DELAY);
+      continue;
+    }
     handleInput();
     world.calculate();
     world.draw();

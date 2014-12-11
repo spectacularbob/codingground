@@ -1,9 +1,11 @@
 #include "world.h"
 #include "drawable.h"
+#include "gameConstants.h"
+
 #define XMIN 0
 #define YMIN 0
-#define XMAX 10
-#define YMAX 10
+#define XMAX MAX_WIDTH
+#define YMAX MAX_HEIGHT
 World::World()
 {
   mode = TOPVIEW;
