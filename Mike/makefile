@@ -3,7 +3,7 @@ LDFLAGS=-lncurses
 
 CC=g++
 CFLAGS=-c
-SOURCES=main.cpp character.cpp drawable.cpp world.cpp scenery.cpp dialog.cpp
+SOURCES=main.cpp character.cpp drawable.cpp world.cpp scenery.cpp dialog.cpp scene.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=game
 

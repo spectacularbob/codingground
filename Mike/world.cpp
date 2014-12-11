@@ -57,3 +57,8 @@ void World::draw()
    drawables[i]->draw();
   }
 }
+
+void World::loadScene(SceneType type)
+{
+  sceneLoader.loadScene(this,type);  
+}

@@ -2,9 +2,9 @@
 #include <unistd.h>
 #include "world.h"
 #include "character.h"
-#include "scenery.h"
 #include "dialog.h"
 #include "gameConstants.h"
+#include "scene.h"
 #define DELAY 30000
 
 World world;
@@ -52,12 +52,7 @@ void initScene()
 {
   dude.setPosition(1,1);
   world.add(&dude);  
-  for(int i =0; i < 10; i++)
-  {
-    Scenery * scenery = new Scenery();
-    scenery->setPosition(0,i);
-    world.add(scenery);
-  }
+  world.loadScene(START);
   dialog.setPosition(10,10);
   dialog.setText("Controls\nMove with WASD\nSpacebar advances dialogs\nShift and then | quits");
   dialog.show();
