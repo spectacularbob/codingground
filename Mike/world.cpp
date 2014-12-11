@@ -4,41 +4,51 @@
 #define YMIN 0
 #define XMAX 10
 #define YMAX 10
-Physics::Physics()
+World::World()
 {
   mode = TOPVIEW;
 }
 
-void Physics::setMode(PhysicsMode mode)
+void World::setMode(WorldMode mode)
 {
   this->mode = mode;
 }
 
-void Physics::add(Drawable * drawable)
+void World::add(Drawable * drawable)
 {
   drawables.push_back(drawable);
 }
 
-void Physics::calculate()
+void World::calculate()
 {
   for(int i = 0; i < drawables.size(); i++)
   {
 	int newX = drawables[i]->getX() + drawables[i]->getI();
 	int newY = drawables[i]->getY() + drawables[i]->getJ();
-	if(newX < XMIN || newX > XMAX)
+        bool collisionDetected = false;
+        for(int j = i+1; j < drawables.size(); j++)
+        {
+	 if (drawables[j]->getX() == newX && drawables[j]->getY() == newY)
+         {
+           collisionDetected = true;
+         }
+	}
+	if(newX < XMIN || newX > XMAX || collisionDetected)
 	{
 	  newX = drawables[i]->getX();
 	}
-	if(newY < YMIN || newY > YMAX)
+	if(newY < YMIN || newY > YMAX || collisionDetected)
 	{
 	  newY = drawables[i]->getY();
 	}
+
+
 	drawables[i]->setPosition(newX,newY);
 	drawables[i]->setVelocity(0,0);
   }
 }
 
-void Physics::draw()
+void World::draw()
 {
   for(int i = 0; i < drawables.size(); i++)
   {

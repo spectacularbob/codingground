@@ -4,22 +4,22 @@
 #include <vector>
 class Drawable;
 
-enum PhysicsMode
+enum WorldMode
 {
   TOPVIEW,
   SIDEVIEW
 };
 
-class Physics
+class World
 {
 private:
   std::vector<Drawable*> drawables;
-  PhysicsMode mode;
+  WorldMode mode;
 public:
-  Physics();
+  World();
   void add(Drawable * drawable);
   void calculate();
-  void setMode(PhysicsMode mode);
+  void setMode(WorldMode mode);
   void draw();
 };
 
