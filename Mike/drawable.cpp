@@ -6,8 +6,8 @@ Drawable::Drawable()
 	x = 0;
 	y = 0;
 	figure = "k";
+	i = 0;
 	j = 0;
-	k = 0;
 }
 
 void Drawable::draw()
@@ -20,8 +20,34 @@ void Drawable::setFigure(char figure)
 	this->figure = figure;
 }
 
-void Drawable::setVelocity(int j, int k)
+void Drawable::setPosition(int x, int y)
 {
+	this->x = x;
+	this->y = y;
+}
+
+void Drawable::setVelocity(int i, int j)
+{
+	this->i = i;
 	this->j = j;
-	this->k = k;
+}
+
+int Drawable::getX()
+{
+	return x;
+}
+
+int Drawable::getY()
+{
+	return y;
+}
+
+int Drawable::getI()
+{
+	return i;
+}
+
+int Drawable::getJ()
+{
+	return j;
 }

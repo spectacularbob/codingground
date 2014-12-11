@@ -1,7 +1,8 @@
 #include <ncurses.h>
 #include <unistd.h>
-#include "physics.h"
+#include "world.h"
 #include "character.h"
+#include "scenery.h"
 #define DELAY 30000
 
 Physics physics;
@@ -14,7 +15,7 @@ void handleInput()
   {
     case 'W':
     case 'w':
-	dude.setVelocity(0,1);
+	dude.setVelocity(0,-1);
         break;
     case 'A':
     case 'a':
@@ -22,13 +23,20 @@ void handleInput()
 	break;
     case 'S':
     case 's':
-	dude.setVelocity(0,-1);
+	dude.setVelocity(0,1);
 	break;
     case 'D':
     case 'd':
 	dude.setVelocity(1,0);
 	break;
   }
+}
+
+void initScene()
+{
+  Scenery * scenery = new Scenery();
+  scenery->setPosition(1,1);
+  physics.add(scenery);
 }
 
 int main(int argc, char *argv[]) {
@@ -41,13 +49,13 @@ int main(int argc, char *argv[]) {
   //getmaxyx(stdscr, max_y, max_x);
   char figure = 'a';
   physics.add(&dude);  
-
+  initScene();
   while(1)
   {
     clear();
     handleInput();
-    dude.draw();
-    dude.setFigure(figure);
+    physics.calculate();
+    physics.draw();
     
     refresh();
     usleep(DELAY);
