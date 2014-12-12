@@ -5,7 +5,12 @@
 
 class Character : public Drawable
 {
-
+private:
+    std::string head;
+    std::string body;
+public:
+    Character();
+    void draw();
 };
 
 

@@ -2,6 +2,7 @@
 #define DRAWABLE_H
 
 #include <string>
+#include <ncurses.h>
 
 class Drawable
 {
@@ -13,7 +14,7 @@ protected:
     int j;
 public:
     Drawable();
-    void draw();
+    virtual void draw();
     void setPosition(int x, int y);
     int getX();
     int getY();
