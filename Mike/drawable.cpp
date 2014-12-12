@@ -1,5 +1,4 @@
 #include "drawable.h"
-#include <ncurses.h>
 
 Drawable::Drawable()
 {
