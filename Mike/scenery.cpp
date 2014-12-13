@@ -12,7 +12,7 @@ void Scenery::setFigure(char figure)
 
 void Scenery::onCollision(Drawable * other)
 {
-
+   other->setVelocity(0,0);
 }
 
 void Scenery::update()

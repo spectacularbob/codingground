@@ -21,9 +21,9 @@ protected:
     std::string figure;
     int i;
     int j;
-    Type whatAmI;
     bool isDestroyed;
 public:
+    Type whatAmI;
     Drawable();
     virtual void draw();
     void setPosition(int x, int y);

@@ -18,3 +18,25 @@ void Character::onCollision(Drawable * other) {
     }
 }
 
+bool Character::collidesWith(Drawable * other)
+{
+  bool movingTowardOther = x + i == other->getX() && y + j == other->getY(); 
+  bool otherMovingToward = other->getX() + other->getI() == x && other->getY() + other->getJ() == y;
+  
+  if((movingTowardOther && otherMovingToward) || 
+     (i == 0 && j == 0 && otherMovingToward) ||
+     (other->getI() == 0 && other->getJ() == 0 && movingTowardOther))
+  {
+   return true;
+  }
+  movingTowardOther = x + i == other->getX() && y + 1 + j == other->getY(); 
+  otherMovingToward = other->getX() + other->getI() == x && other->getY() + other->getJ() == y + 1;
+  
+  if((movingTowardOther && otherMovingToward) || 
+     (i == 0 && j == 0 && otherMovingToward) ||
+     (other->getI() == 0 && other->getJ() == 0 && movingTowardOther))
+  {
+   return true;
+  }
+  return false;
+}

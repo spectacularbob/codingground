@@ -18,6 +18,7 @@ private:
 public:
     virtual void update() = 0;
     void onCollision(Drawable * other);
+    bool collidesWith(Drawable * other);
 };
 
 

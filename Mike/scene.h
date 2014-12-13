@@ -3,7 +3,9 @@
 
 enum SceneType
 {
-  START
+  START,
+  ROOM_ONE,
+  ROOM_TWO
 };
 
 class World;
@@ -14,6 +16,7 @@ public:
   void loadScene(World * world, SceneType type);
 private:
   void loadStart(World * world);
+  void loadRoomOne(World * world);
 };
 
 #endif
