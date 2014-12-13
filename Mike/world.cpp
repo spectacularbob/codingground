@@ -76,3 +76,9 @@ void World::update() {
         drawables[index]->update();
     }
 }
+
+Hero * World::getHero()
+{
+   return hero;
+}
+

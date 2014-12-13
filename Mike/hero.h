@@ -16,7 +16,7 @@
 class Hero : public Character {
 private:
     int weapon;
-    vector<Weapon> weaponVect;
+    std::vector<Weapon*> weaponVect;
     
 public:
     Hero();

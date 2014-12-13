@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "scene.h"
+#include "hero.h"
 class Drawable;
 
 enum WorldMode
@@ -18,6 +19,7 @@ private:
   std::vector<Drawable*> background;
   WorldMode mode;
   SceneLoader sceneLoader;
+  Hero hero;
 public:
   World();
   void add(Drawable * drawable);
@@ -27,6 +29,7 @@ public:
   void draw();
   void loadScene(SceneType index);
   void update();
+  Hero * getHero();
   
 };
 

@@ -8,7 +8,6 @@
 #define DELAY 30000
 
 World world;
-Character dude;
 bool shutDown = false;
 Dialog dialog;
 
@@ -24,23 +23,24 @@ void handleInput()
   {
     return;
   }
+  
   switch(userIn)
   {
     case 'W':
     case 'w':
-	dude.setVelocity(0,-1);
+	world.getHero()->setVelocity(0,-1);
         break;
     case 'A':
     case 'a':
-	dude.setVelocity(-1,0);
+	world.getHero()->setVelocity(-1,0);
 	break;
     case 'S':
     case 's':
-	dude.setVelocity(0,1);
+	world.getHero()->setVelocity(0,1);
 	break;
     case 'D':
     case 'd':
-	dude.setVelocity(1,0);
+        world.getHero()->setVelocity(1,0);
 	break;
     case '|':
         shutDown = true;
@@ -50,7 +50,6 @@ void handleInput()
 
 void initScene()
 {
-  dude.setPosition(1,1);
   world.add(&dude);  
   world.loadScene(START);
   dialog.setPosition(10,10);
