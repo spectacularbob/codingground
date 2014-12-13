@@ -14,3 +14,8 @@ void Scenery::onCollision(Drawable * other)
 {
 
 }
+
+void Scenery::update()
+{
+
+}

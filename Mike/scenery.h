@@ -9,6 +9,7 @@ public:
   Scenery();
   void setFigure(char figure);
   void onCollision(Drawable * drawable);
+  void update();
 };
 
 #endif

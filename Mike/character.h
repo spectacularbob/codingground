@@ -14,11 +14,12 @@ private:
     std::string head;
     std::string body;
     int health;
-    Direction facing = LEFT;
+    Direction facing;
 public:
     Character();
     void draw();
     void update();
+    void onCollision(Drawable * other);
 };
 
 

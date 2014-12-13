@@ -5,11 +5,11 @@
 #include <ncurses.h>
 
 enum Type {
-    HERO
-    HERO_WEP
-    ENEMY
-    ENEMY_WEP
-    SCENERY
+    HERO,
+    HERO_WEP,
+    ENEMY,
+    ENEMY_WEP,
+    SCENERY,
     TRIGGER
 };
 

@@ -9,8 +9,14 @@ Character::Character() {
     body = "|";
     head = "-";
     health = 10;
+    facing = LEFT;
 }
 
 void Character::update() {
     
+}
+
+void Character::onCollision(Drawable * other)
+{
+
 }

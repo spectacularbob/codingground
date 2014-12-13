@@ -53,3 +53,12 @@ bool Dialog::isVisible()
   return visible;
 }
 
+void Dialog::update()
+{
+
+}
+
+void Dialog::onCollision(Drawable * other)
+{
+
+}
