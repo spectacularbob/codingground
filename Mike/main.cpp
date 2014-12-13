@@ -5,6 +5,7 @@
 #include "dialog.h"
 #include "gameConstants.h"
 #include "scene.h"
+#include "hero.h"
 #define DELAY 30000
 
 World world;
@@ -50,7 +51,6 @@ void handleInput()
 
 void initScene()
 {
-  world.add(&dude);  
   world.loadScene(START);
   dialog.setPosition(10,10);
   dialog.setText("Controls\nMove with WASD\nSpacebar advances dialogs\nShift and then | quits");

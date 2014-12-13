@@ -79,6 +79,6 @@ void World::update() {
 
 Hero * World::getHero()
 {
-   return hero;
+   return &hero;
 }
 

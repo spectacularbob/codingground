@@ -10,6 +10,7 @@
 #define __nCurses__weapon__
 
 #include <stdio.h>
+#include "drawable.h"
 
 enum WeapType {
     FIST,
@@ -19,10 +20,12 @@ enum WeapType {
 };
 
 class Weapon : public Drawable {
+public:
+  Weapon();
+  WeapType weaponType;
+  int hit;
 protected:
-    WeapType weaponType;
     std::string figure;
-    int hit;
 };
 
 #endif /* defined(__nCurses__weapon__) */

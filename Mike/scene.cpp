@@ -43,7 +43,7 @@ void SceneLoader::loadStart(World * world)
   scenery->setFigure('*');
   world->addBackground(scenery);
 
-  world->getHero().setPosition(5,5);
+  world->getHero()->setPosition(5,5);
   world->add(world->getHero());
 }
 

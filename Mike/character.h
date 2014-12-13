@@ -10,15 +10,16 @@ enum Direction {
 
 class Character : public Drawable
 {
-private:
+protected:
     std::string head;
     std::string body;
     int health;
     Direction facing;
 public:
-    virtual void update() = 0;
-    void onCollision(Drawable * other);
-    bool collidesWith(Drawable * other);
+    Character();
+    virtual void onCollision(Drawable * other);
+    virtual bool collidesWith(Drawable * other);
+    virtual void draw();
 };
 
 
