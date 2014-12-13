@@ -28,8 +28,8 @@ public:
   void draw();
   void loadScene(SceneType index);
   void update();
+    void spawnWeapon(Drawable*);
   Hero * getHero();
-  
 };
 
 #endif

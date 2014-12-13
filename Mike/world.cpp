@@ -78,8 +78,14 @@ void World::update() {
     }
 }
 
+<<<<<<< HEAD
+void World::spawnWeapon(Drawable*) {
+    
+}
+=======
 Hero * World::getHero()
 {
    return &hero;
 }
 
+>>>>>>> 8217538feac69e00df7e1dc2a2b922afc7cea2fa

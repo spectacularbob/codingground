@@ -1,11 +1,3 @@
-//
-//  hero.cpp
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #include "hero.h"
 
 const int INITIAL_HEALTH = 10;
@@ -17,11 +9,6 @@ Hero::Hero() {
     facing = RIGHT;
     whatAmI = HERO;
     health = INITIAL_HEALTH;
-}
-
-Hero::~Hero()
-{
-
 }
 
 void Hero::cycleWeapon() {
@@ -48,12 +35,9 @@ void Hero::addHealth(int healthReward) {
     health += healthReward;
 }
 
-void Hero::update()
-{
-
-}
-
-void Hero::onCollision(Drawable * other)
-{
-
+void Hero::update() {
+    
+    if (health <= 0) {
+        worldRef->endFight();
+    }
 }

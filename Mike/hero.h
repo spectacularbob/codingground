@@ -1,11 +1,3 @@
-//
-//  hero.h
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #ifndef __nCurses__hero__
 #define __nCurses__hero__
 
@@ -20,13 +12,11 @@ private:
     
 public:
     Hero();
-    ~Hero();
     void cycleWeapon();
     void update();
     void onCollision(Drawable * other);
     void addWeapon(Weapon*);
     void addHealth(int healthReward);
-    void death();
 };
 
 #endif /* defined(__nCurses__hero__) */

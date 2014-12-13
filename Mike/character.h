@@ -13,12 +13,13 @@ class Character : public Drawable
 protected:
     std::string head;
     std::string body;
-    int health;
     Direction facing;
+    int health;
 public:
-    Character();
-    virtual void onCollision(Drawable * other);
+    void onCollision(Drawable * other);
     bool collidesWith(Drawable * other);
+    int getHealth();
+    int calcDir();
     void draw();
 };
 

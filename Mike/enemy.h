@@ -1,15 +1,13 @@
-//
-//  enemy.h
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #ifndef __nCurses__enemy__
 #define __nCurses__enemy__
 
 #include "character.h"
+
+enum EnemyLevel {
+    PAWN,
+    ELITE,
+    BOSS,
+};
 
 class Enemy : public Character {
 private:
@@ -19,11 +17,12 @@ private:
     vector<Weapon*> weapons;
     int currentWeapon;
     int level;
+    int wait;
+    int count;
 public:
-    Enemy(World* worldRef, Hero*, Weapon* mainWeapon, int level);
+    Enemy(World* worldRef, Hero*, Weapon* mainWeapon, int lev);
     void update();
-    void draw();
-    void death();
+    int calculateHealth();
 };
 
 #endif /* defined(__nCurses__enemy__) */

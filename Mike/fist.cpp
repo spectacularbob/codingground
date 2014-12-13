@@ -1,24 +1,17 @@
-//
-//  fist.cpp
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #include "fist.h"
 
-Fist::Fist() {
+Fist::Fist(int velo) {
     wait = 1;
     count = 0;
-    hit = 1;
+    hit = FIST_DAMAGE;
     figure = "D";
     weaponType = FIST;
+    velocity = velo;
 }
 
 void Fist::update() {
     if (count = 0) {
-        setVelocity(1,0);
+        setVelocity(velocity,0);
         count++;
     } else if (count < wait) {
         count++;
@@ -26,9 +19,3 @@ void Fist::update() {
     isDestroyed = true;
 }
 
-void Fist::onCollision(Drawable* other) {
-    if (other->whatAmI == HERO || other->whatAmI == ENEMY) {
-        other->health -= hit;
-    }
-    isDestroyed = true;
-}

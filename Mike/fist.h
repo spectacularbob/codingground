@@ -16,8 +16,8 @@ private:
     int wait;
     int count;
 public:
-    void attack();
-    void upadate();
+    Fist(int);
+    void update();
 };
 
 #endif /* defined(__nCurses__fist__) */

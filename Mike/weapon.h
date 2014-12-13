@@ -1,16 +1,12 @@
-//
-//  weapon.h
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #ifndef __nCurses__weapon__
 #define __nCurses__weapon__
 
-#include <stdio.h>
 #include "drawable.h"
+
+const int FIST_DAMAGE = 1;
+const int PISTOL_DAMAGE = 3;
+const int FIRE_DAMAGE = 8;
+const int ELEC_DAMAGE = 12;
 
 enum WeapType {
     FIST,
@@ -26,6 +22,11 @@ public:
   int hit;
 protected:
     std::string figure;
+    int hit;
+    int velocity;
+public:
+    WeapType getWeapon();
+    void onCollision(Drawable * other);
 };
 
 #endif /* defined(__nCurses__weapon__) */

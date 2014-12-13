@@ -1,11 +1,3 @@
-//
-//  projectile.cpp
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #include "projectile.h"
 
 void Projectile::update() {
@@ -14,5 +6,5 @@ void Projectile::update() {
         return;
     }
     count = 0;
-    setVelocity(1,0);
+    setVelocity(velocity,0);
 }
