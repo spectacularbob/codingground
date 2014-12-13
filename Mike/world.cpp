@@ -68,6 +68,7 @@ void World::loadScene(SceneType type)
 {
   drawables.clear();
   background.clear();
+  drawables.push_back(&hero);
   sceneLoader.loadScene(this,type);  
 }
 

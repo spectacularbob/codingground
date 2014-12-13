@@ -14,6 +14,7 @@ void Trigger::onCollision(Drawable * other)
 {
    if(other->whatAmI == HERO)
    {
+     other->setVelocity(0,0);
      world->loadScene(sceneType);
    } 
 }

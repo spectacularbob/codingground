@@ -10,7 +10,8 @@ enum Type {
     ENEMY,
     ENEMY_WEP,
     SCENERY,
-    TRIGGER
+    TRIGGER,
+    NONE
 };
 
 class Drawable
