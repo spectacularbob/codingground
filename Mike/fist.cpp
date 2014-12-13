@@ -13,6 +13,7 @@ Fist::Fist() {
     count = 0;
     hit = 1;
     figure = "D";
+    weaponType = FIST;
 }
 
 void Fist::update() {

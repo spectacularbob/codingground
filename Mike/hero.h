@@ -16,12 +16,18 @@
 class Hero : public Character {
 private:
     int weapon;
-    vector<Weapon> weaponVect;
+    vector<Weapon*> weaponVect;
     
 public:
     Hero();
+    void draw();
     void cycleWeapon();
-    void attack;
+    void update();
+    void onCollision(Drawable * other);
+    void addWeapon(Weapon*);
+    void addHealth(int healthReward);
+    void death();
+    ~Hero();
 };
 
 #endif /* defined(__nCurses__hero__) */

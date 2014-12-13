@@ -12,11 +12,9 @@ Character::Character() {
     facing = LEFT;
 }
 
-void Character::update() {
-    
+void Character::onCollision(Drawable * other) {
+    if (other->whatAmI == HERO || other->whatAmI == ENEMY) {
+        other->setVelocity(0,0);
+    }
 }
 
-void Character::onCollision(Drawable * other)
-{
-
-}
