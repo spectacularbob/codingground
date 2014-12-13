@@ -22,6 +22,7 @@ public:
     int getJ();
     void setFigure(char figure);
     void setVelocity(int i, int j);
+    virtual void onCollision(Drawable * other) = 0;
 };
 
 #endif
