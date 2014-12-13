@@ -20,6 +20,7 @@ public:
     void draw();
     void update();
     void onCollision(Drawable * other);
+    bool collidesWith(Drawable * other);
 };
 
 
