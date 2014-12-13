@@ -6,12 +6,13 @@
 #include "pistol.h"
 #include "elecball.h"
 #include "fireball.h"
-
+#include <stdlib.h>
 const int PAWN_HEALTH = 10;
 const int ELITE_HEALTH = 35;
 const int BOSS_HEALTH = 80;
 const int HEALTH_REWARD_DIVISOR = 5;
 const int FIRE_DELAY = 10;
+const int RAND_POS = 3;
 
 Enemy::Enemy(World* worldRef, Hero* dude, WeapType mainWeapon, EnemyLevel lev) {
     facing = LEFT;
@@ -53,6 +54,7 @@ Enemy::Enemy(World* worldRef, Hero* dude, WeapType mainWeapon, EnemyLevel lev) {
 void Enemy::update() {
     if (worldPtr->mode == SIDEVIEW) {
         if (count < wait) {
+            setVelocity((rand() % RAND_POS) - 1, 0);
             count++;
         } else {
             count = 0;
@@ -72,7 +74,7 @@ void Enemy::update() {
                     
                 case ELEC_BALL:
                     fire = new ElecBall(calcDir());
-                    break;
+		    break;
             }
             worldPtr->spawnWeapon(fire);
         }
