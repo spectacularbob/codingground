@@ -4,7 +4,7 @@
 #include "drawable.h"
 
 enum Direction {
-    RIGHT
+    RIGHT,
     LEFT
 };
 

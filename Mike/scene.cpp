@@ -23,4 +23,9 @@ void SceneLoader::loadStart(World * world)
     scenery->setPosition(MAX_WIDTH,i);
     world->add(scenery);
   }
+
+  Scenery * scenery = new Scenery();
+  scenery->setPosition(15,15);
+  scenery->setFigure('*');
+  world->addBackground(scenery);
 }

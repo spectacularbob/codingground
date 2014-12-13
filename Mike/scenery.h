@@ -7,6 +7,8 @@ class Scenery : public Drawable
 {
 public:
   Scenery();
+  void setFigure(char figure);
+  void onCollision(Drawable * drawable);
 };
 
 #endif

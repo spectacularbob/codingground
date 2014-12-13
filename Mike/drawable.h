@@ -23,6 +23,7 @@ public:
     void setFigure(char figure);
     void setVelocity(int i, int j);
     virtual void onCollision(Drawable * other) = 0;
+    virtual bool collidesWith(Drawable * other);
 };
 
 #endif

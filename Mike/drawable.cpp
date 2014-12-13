@@ -1,4 +1,5 @@
 #include "drawable.h"
+#include <cmath>
 
 Drawable::Drawable()
 {
@@ -49,4 +50,19 @@ int Drawable::getI()
 int Drawable::getJ()
 {
 	return j;
+}
+
+bool Drawable::collidesWith(Drawable * other)
+{
+  bool movingTowardOther = x + i == other->x && y + j == other->y; 
+  bool otherMovingToward = other->x + other->i == x && other->y + other->j == y;
+  
+  if((movingTowardOther && otherMovingToward) || 
+     (i == 0 && j == 0 && otherMovingToward) ||
+     (other->i == 0 && other->j == 0 && movingTowardOther))
+  {
+   return true;
+  }
+  return false;
+
 }

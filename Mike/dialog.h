@@ -16,6 +16,7 @@ public:
   bool isVisible();
   void show();
   void hide();
+  void onCollide(Drawable * drawable);
 };
 
 #endif
