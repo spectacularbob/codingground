@@ -1,6 +1,9 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+#include <vector>
+#include "drawable.h"
+
 enum SceneType
 {
   START,
@@ -9,14 +12,20 @@ enum SceneType
 };
 
 class World;
-
 class SceneLoader
 {
 public:
   void loadScene(World * world, SceneType type);
 private:
-  void loadStart(World * world);
-  void loadRoomOne(World * world);
+  World * world;
+  std::vector<Drawable*> scenery;
+  void loadStart();
+  void loadRoomOne();
+  void loadRoomTwo();
+  void createBush(int x, int y);
+  void createVWall(int x, int y);
+  void createHWall(int x, int y);
+  void createRoomTrigger(int x, int y, SceneType type);
 };
 
 #endif

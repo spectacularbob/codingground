@@ -8,7 +8,8 @@ Drawable::Drawable()
 	figure = "k";
 	i = 0;
 	j = 0;
-    isDestroyed = false;
+        isDestroyed = false;
+        whatAmI = NONE;
 }
 
 void Drawable::draw()
