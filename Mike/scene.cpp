@@ -49,5 +49,31 @@ void SceneLoader::loadStart(World * world)
 
 void SceneLoader::loadRoomOne(World * world)
 {
-	
+  for(int i =0; i <= MAX_HEIGHT; i++)
+  {
+    if(i == 5 || i == 6) continue;
+    
+
+    Scenery * scenery = new Scenery();
+    scenery->setPosition(0,i);
+    world->add(scenery);
+    scenery = new Scenery();
+    scenery->setPosition(MAX_WIDTH,i);
+    world->add(scenery);
+  }
+
+  Trigger * trigger = new Trigger(world,ROOM_ONE);
+  trigger->setPosition(0,5);
+  world->add(trigger);
+  trigger = new Trigger(world,ROOM_ONE);
+  trigger->setPosition(0,6);
+  world->add(trigger);
+
+  Scenery * scenery = new Scenery();
+  scenery->setPosition(15,15);
+  scenery->setFigure('*');
+  world->addBackground(scenery);
+
+  world->getHero()->setPosition(15,15);
+  world->add(world->getHero());
 }

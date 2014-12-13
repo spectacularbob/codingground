@@ -18,8 +18,8 @@ protected:
 public:
     Character();
     virtual void onCollision(Drawable * other);
-    virtual bool collidesWith(Drawable * other);
-    virtual void draw();
+    bool collidesWith(Drawable * other);
+    void draw();
 };
 
 

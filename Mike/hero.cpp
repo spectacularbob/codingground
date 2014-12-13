@@ -19,6 +19,10 @@ Hero::Hero() {
     health = INITIAL_HEALTH;
 }
 
+Hero::~Hero()
+{
+
+}
 
 void Hero::cycleWeapon() {
     if (weaponVect.size() >= 1) {
@@ -42,4 +46,14 @@ void Hero::addWeapon(Weapon* newWeapon) {
 
 void Hero::addHealth(int healthReward) {
     health += healthReward;
+}
+
+void Hero::update()
+{
+
+}
+
+void Hero::onCollision(Drawable * other)
+{
+
 }

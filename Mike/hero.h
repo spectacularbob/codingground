@@ -20,10 +20,10 @@ private:
     
 public:
     Hero();
-    void draw();
+    ~Hero();
     void cycleWeapon();
-    virtual void update();
-    virtual void onCollision(Drawable * other);
+    void update();
+    void onCollision(Drawable * other);
     void addWeapon(Weapon*);
     void addHealth(int healthReward);
     void death();

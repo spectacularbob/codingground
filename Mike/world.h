@@ -3,9 +3,8 @@
 
 #include <vector>
 #include "scene.h"
+#include "drawable.h"
 #include "hero.h"
-class Drawable;
-
 enum WorldMode
 {
   TOPVIEW,

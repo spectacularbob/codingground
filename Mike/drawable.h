@@ -25,7 +25,6 @@ protected:
 public:
     Type whatAmI;
     Drawable();
-    virtual void draw();
     void setPosition(int x, int y);
     int getX();
     int getY();
@@ -36,6 +35,7 @@ public:
     virtual void onCollision(Drawable * other) = 0;
     virtual bool collidesWith(Drawable * other);
     virtual void update() = 0;
+    virtual void draw();
 };
 
 #endif
