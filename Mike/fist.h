@@ -13,8 +13,11 @@
 
 class Fist : public Weapon {
 private:
+    int wait;
+    int count;
 public:
     void attack();
+    void upadate();
 };
 
 #endif /* defined(__nCurses__fist__) */
