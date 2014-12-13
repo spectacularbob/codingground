@@ -13,6 +13,7 @@ Hero::Hero() {
     body = "|";
     weapon = 0;
     facing = RIGHT;
+    whatAmI = HERO;
 }
 
 void Hero::cycleWeapon() {

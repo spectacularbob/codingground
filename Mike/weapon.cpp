@@ -7,3 +7,8 @@
 //
 
 #include "weapon.h"
+
+Weapon::Weapon() {
+    hit = 1;
+    figure = "-";
+}

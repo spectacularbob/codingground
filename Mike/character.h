@@ -13,10 +13,12 @@ class Character : public Drawable
 private:
     std::string head;
     std::string body;
+    int health;
     Direction facing = LEFT;
 public:
     Character();
     void draw();
+    void update();
 };
 
 
