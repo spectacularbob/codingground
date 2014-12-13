@@ -16,8 +16,11 @@ enum WeapType {
 };
 
 class Weapon : public Drawable {
+public:
+  Weapon();
+  WeapType weaponType;
+  int hit;
 protected:
-    WeapType weaponType;
     std::string figure;
     int hit;
     int velocity;

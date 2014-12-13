@@ -10,7 +10,7 @@ enum Direction {
 
 class Character : public Drawable
 {
-private:
+protected:
     std::string head;
     std::string body;
     Direction facing;
@@ -20,6 +20,7 @@ public:
     bool collidesWith(Drawable * other);
     int getHealth();
     int calcDir();
+    void draw();
 };
 
 

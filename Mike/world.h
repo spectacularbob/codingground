@@ -3,8 +3,8 @@
 
 #include <vector>
 #include "scene.h"
-class Drawable;
-
+#include "drawable.h"
+#include "hero.h"
 enum WorldMode
 {
   TOPVIEW,
@@ -18,6 +18,7 @@ private:
   std::vector<Drawable*> background;
   WorldMode mode;
   SceneLoader sceneLoader;
+  Hero hero;
 public:
   World();
   void add(Drawable * drawable);
@@ -28,6 +29,7 @@ public:
   void loadScene(SceneType index);
   void update();
     void spawnWeapon(Drawable*);
+  Hero * getHero();
 };
 
 #endif

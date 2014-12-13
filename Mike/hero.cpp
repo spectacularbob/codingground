@@ -1,11 +1,3 @@
-//
-//  hero.cpp
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #include "hero.h"
 
 const int INITIAL_HEALTH = 10;
@@ -28,9 +20,9 @@ void Hero::cycleWeapon() {
 
 void Hero::addWeapon(Weapon* newWeapon) {
     for (int index = 0; index < weaponVect.size(); index++) {
-        if (weaponVect[i].weaponType == newWeapon->weaponType) {
-            if (weaponVect[i].hit < newWeapon->hit) {
-                weaponVect[i].hit = newWeapon->hit;
+        if (weaponVect[i]->weaponType == newWeapon->weaponType) {
+            if (weaponVect[i]->hit < newWeapon->hit) {
+                weaponVect[i]->hit = newWeapon->hit;
             }
             return;
         }
