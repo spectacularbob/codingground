@@ -11,8 +11,16 @@
 
 #include <stdio.h>
 
+enum WeapType {
+    FIST,
+    PISTOL,
+    FIRE_BALL,
+    ELEC_BALL
+};
+
 class Weapon : public Drawable {
 protected:
+    WeapType weaponType;
     std::string figure;
     int hit;
 };

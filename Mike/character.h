@@ -16,9 +16,7 @@ private:
     int health;
     Direction facing;
 public:
-    Character();
-    void draw();
-    void update();
+    virtual void update() = 0;
     void onCollision(Drawable * other);
     bool collidesWith(Drawable * other);
 };
