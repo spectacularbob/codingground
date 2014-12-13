@@ -8,5 +8,9 @@ void Character::draw() {
 Character::Character() {
     body = "|";
     head = "-";
+    health = 10;
 }
 
+void Character::update() {
+    
+}

@@ -14,7 +14,7 @@
 class Weapon : public Drawable {
 protected:
     std::string figure;
-    virtual void attack(Character*)=0;
+    int hit;
 };
 
 #endif /* defined(__nCurses__weapon__) */

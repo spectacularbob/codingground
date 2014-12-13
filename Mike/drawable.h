@@ -4,6 +4,15 @@
 #include <string>
 #include <ncurses.h>
 
+enum Type {
+    HERO
+    HERO_WEP
+    ENEMY
+    ENEMY_WEP
+    SCENERY
+    TRIGGER
+};
+
 class Drawable
 {
 protected:
@@ -12,6 +21,8 @@ protected:
     std::string figure;
     int i;
     int j;
+    Type whatAmI;
+    bool isDestroyed;
 public:
     Drawable();
     virtual void draw();
@@ -24,6 +35,7 @@ public:
     void setVelocity(int i, int j);
     virtual void onCollision(Drawable * other) = 0;
     virtual bool collidesWith(Drawable * other);
+    virtual void update() = 0;
 };
 
 #endif

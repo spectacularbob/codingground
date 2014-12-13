@@ -26,6 +26,7 @@ public:
   void setMode(WorldMode mode);
   void draw();
   void loadScene(SceneType index);
+  void update();
 };
 
 #endif

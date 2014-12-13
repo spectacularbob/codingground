@@ -86,6 +86,7 @@ int main(int argc, char *argv[])
   initScene();
   while(shutDown == false)
   {
+    world.update();
     clear();
     if(checkScreenSize() == false)
     { 

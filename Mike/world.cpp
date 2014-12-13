@@ -64,3 +64,9 @@ void World::loadScene(SceneType type)
 {
   sceneLoader.loadScene(this,type);  
 }
+
+void World::update() {
+    for (int index = 0; index < drawables.size(); index++){
+        drawables[index]->update();
+    }
+}
