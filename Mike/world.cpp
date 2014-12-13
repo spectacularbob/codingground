@@ -76,3 +76,7 @@ void World::update() {
         drawables[index]->update();
     }
 }
+
+void World::spawnWeapon(Drawable*) {
+    
+}

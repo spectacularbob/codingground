@@ -1,14 +1,17 @@
-//
-//  weapon.cpp
-//  nCurses
-//
-//  Created by Mike Pomazal on 12/12/14.
-//
-//
-
 #include "weapon.h"
 
 Weapon::Weapon() {
     hit = 1;
     figure = "-";
+}
+
+WeapType Weapon::getWeapon() {
+    return weaponType;
+}
+
+void Weapon::onCollision(Drawable* other) {
+    if (other->whatAmI == HERO || other->whatAmI == ENEMY) {
+        other->health -= hit;
+    }
+    isDestroyed = true;
 }

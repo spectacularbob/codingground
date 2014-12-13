@@ -20,14 +20,11 @@ private:
     
 public:
     Hero();
-    void draw();
     void cycleWeapon();
     void update();
     void onCollision(Drawable * other);
     void addWeapon(Weapon*);
     void addHealth(int healthReward);
-    void death();
-    ~Hero();
 };
 
 #endif /* defined(__nCurses__hero__) */

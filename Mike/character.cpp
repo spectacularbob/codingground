@@ -40,3 +40,15 @@ bool Character::collidesWith(Drawable * other)
   }
   return false;
 }
+
+int Character::getHealth() {
+    return health;
+}
+
+int Character::calcDir() {
+    if (facing == RIGHT) {
+        return 1;
+    } else {
+        return -1;
+    }
+}

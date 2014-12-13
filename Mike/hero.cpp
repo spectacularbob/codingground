@@ -42,3 +42,10 @@ void Hero::addWeapon(Weapon* newWeapon) {
 void Hero::addHealth(int healthReward) {
     health += healthReward;
 }
+
+void Hero::update() {
+    
+    if (health <= 0) {
+        worldRef->endFight();
+    }
+}

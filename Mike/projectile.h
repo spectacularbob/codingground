@@ -12,13 +12,12 @@
 #include "weapon.h"
 
 class Projectile : public Weapon {
-private:
+protected:
     int wait;
     int count;
+    int velocity;
     
 public:
-    void onCollision(Drawable * other);
-    void attack();
     void update();
 };
 

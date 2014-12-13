@@ -14,5 +14,5 @@ void Projectile::update() {
         return;
     }
     count = 0;
-    setVelocity(1,0);
+    setVelocity(velocity,0);
 }
