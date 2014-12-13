@@ -30,12 +30,6 @@ void World::calculate()
 {
   for(int i = 0; i < drawables.size(); i++)
   {
-	int originalX = drawables[i]->getX();
-	int originalY = drawables[i]->getY();
-	int newX = originalX + drawables[i]->getI();
-	int newY = originalY + drawables[i]->getJ();
-	drawables[i]->setPosition(newX,newY);
-        
 	for(int j = i+1; j < drawables.size(); j++)
         {
 	  if(drawables[i]->collidesWith(drawables[j]))
@@ -43,8 +37,18 @@ void World::calculate()
 	     drawables[i]->onCollision(drawables[j]);
              drawables[j]->onCollision(drawables[i]);    	
           }
-	}
+	}	
   }
+
+  for(int i =0; i < drawables.size(); i++)
+  {
+	int originalX = drawables[i]->getX();
+	int originalY = drawables[i]->getY();
+	int newX = originalX + drawables[i]->getI();
+	int newY = originalY + drawables[i]->getJ();
+	drawables[i]->setPosition(newX,newY);
+        drawables[i]->setVelocity(0,0);
+  }       
 }
 
 void World::draw()
