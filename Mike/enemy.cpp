@@ -1,5 +1,11 @@
 #include "enemy.h"
 #include "weapon.h"
+#include "world.h"
+#include "hero.h"
+#include "fist.h"
+#include "pistol.h"
+#include "elecball.h"
+#include "fireball.h"
 
 const int PAWN_HEALTH = 10;
 const int ELITE_HEALTH = 35;
@@ -7,7 +13,7 @@ const int BOSS_HEALTH = 80;
 const int HEALTH_REWARD_DIVISOR = 5;
 const int FIRE_DELAY = 10;
 
-Enemy::Enemy(World* worldRef, Hero* dude, Weapon* mainWeapon, EnemyLevel lev) {
+Enemy::Enemy(World* worldRef, Hero* dude, WeapType mainWeapon, EnemyLevel lev) {
     facing = LEFT;
     heroPtr = dude;
     worldPtr = worldRef;
@@ -19,7 +25,7 @@ Enemy::Enemy(World* worldRef, Hero* dude, Weapon* mainWeapon, EnemyLevel lev) {
         case PAWN:
             head = "-";
             body = "}";
-            health = calculateHealth;
+            health = calculateHealth();
             healthReward = health / HEALTH_REWARD_DIVISOR;
             wait = FIRE_DELAY;
             break;
@@ -27,7 +33,7 @@ Enemy::Enemy(World* worldRef, Hero* dude, Weapon* mainWeapon, EnemyLevel lev) {
         case ELITE:
             head = "+";
             body = "&";
-            health = calculateHealth;
+            health = calculateHealth();
             healthReward = health / HEALTH_REWARD_DIVISOR;
             wait = FIRE_DELAY;
             break;
@@ -35,7 +41,7 @@ Enemy::Enemy(World* worldRef, Hero* dude, Weapon* mainWeapon, EnemyLevel lev) {
         case BOSS:
             head = "@";
             body = "H";
-            health = calculateHealth;
+            health = calculateHealth();
             healthReward = health / HEALTH_REWARD_DIVISOR;
             wait = FIRE_DELAY;
             break;
@@ -50,29 +56,28 @@ void Enemy::update() {
             count++;
         } else {
             count = 0;
-            switch (weapons[currentWeapon]->getWeapon()) {
+            Drawable * fire;
+            switch (weapons[currentWeapon]) {
                 case FIST:
-                    Drawable* fire = new Fist(calcDir());
+                    fire = new Fist(calcDir());
                     break;
                     
                 case PISTOL:
-                    Drawable* fire = new Pistol(calcDir());
+                    fire = new Pistol(calcDir());
                     break;
                     
                 case FIRE_BALL:
-                    Drawable* fire = new FireBall(calcDir());
+                    fire = new FireBall(calcDir());
                     break;
                     
                 case ELEC_BALL:
-                    Drawable* fire = new ElecBall(calcDir());
-                    break;
-                    
-                default:
+                    fire = new ElecBall(calcDir());
                     break;
             }
+            worldPtr->spawnWeapon(fire);
         }
         if (health <= 0 || heroPtr->health <= 0) {
-            worldRef->endFight();
+            worldPtr->endFight();
         }
     }
 }

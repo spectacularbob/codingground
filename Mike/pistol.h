@@ -3,7 +3,7 @@
 
 #include "projectile.h"
 
-class Pistol : public projectile {
+class Pistol : public Projectile {
 private:
     
 public:

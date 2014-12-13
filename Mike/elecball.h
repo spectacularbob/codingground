@@ -3,7 +3,7 @@
 
 #include "projectile.h"
 
-class ElecBall : public projectile {
+class ElecBall : public Projectile {
 private:
     
 public:

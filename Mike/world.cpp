@@ -9,6 +9,12 @@
 World::World()
 {
   mode = TOPVIEW;
+  hero = new Hero(this);
+}
+
+World::~World()
+{
+ delete hero;
 }
 
 void World::setMode(WorldMode mode)
@@ -68,7 +74,7 @@ void World::loadScene(SceneType type)
 {
   drawables.clear();
   background.clear();
-  drawables.push_back(&hero);
+  drawables.push_back(hero);
   sceneLoader.loadScene(this,type);  
 }
 
@@ -78,14 +84,15 @@ void World::update() {
     }
 }
 
-<<<<<<< HEAD
 void World::spawnWeapon(Drawable*) {
     
 }
-=======
 Hero * World::getHero()
 {
-   return &hero;
+   return hero;
 }
 
->>>>>>> 8217538feac69e00df7e1dc2a2b922afc7cea2fa
+void World::endFight()
+{
+
+}

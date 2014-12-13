@@ -3,6 +3,7 @@
 #include "world.h"
 #include "gameConstants.h"
 #include "trigger.h"
+#include "enemy.h"
 void SceneLoader::loadScene(World * world, SceneType type)
 {
   this->world = world;
@@ -52,6 +53,9 @@ void SceneLoader::loadStart()
 
 void SceneLoader::loadRoomOne()
 {
+  Enemy * enemy = new Enemy(world,world->getHero(),FIST, PAWN);
+  enemy->setPosition(10,13);
+  world->add(enemy);
   for(int i =10; i <= MAX_HEIGHT; i++)
   {
     createVWall(0,i);

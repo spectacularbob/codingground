@@ -1,6 +1,6 @@
 #include "fireball.h"
 
-Fireball::Fireball(int dir) {
+FireBall::FireBall(int dir) {
     velocity = dir;
     hit = FIRE_DAMAGE;
     weaponType = FIRE_BALL;

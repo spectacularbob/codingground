@@ -1,14 +1,15 @@
 #include "hero.h"
-
+#include "world.h"
 const int INITIAL_HEALTH = 10;
 
-Hero::Hero() {
+Hero::Hero(World * world) {
     head = "o";
     body = "|";
     weapon = 0;
     facing = RIGHT;
     whatAmI = HERO;
     health = INITIAL_HEALTH;
+    worldRef = world;
 }
 
 void Hero::cycleWeapon() {

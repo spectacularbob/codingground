@@ -16,11 +16,12 @@ class World
 private:
   std::vector<Drawable*> drawables;
   std::vector<Drawable*> background;
-  WorldMode mode;
   SceneLoader sceneLoader;
-  Hero hero;
+  Hero * hero;
 public:
+  WorldMode mode;
   World();
+  ~World();
   void add(Drawable * drawable);
   void addBackground(Drawable * background);
   void calculate();
@@ -28,8 +29,9 @@ public:
   void draw();
   void loadScene(SceneType index);
   void update();
-    void spawnWeapon(Drawable*);
+  void spawnWeapon(Drawable*);
   Hero * getHero();
+  void endFight();
 };
 
 #endif

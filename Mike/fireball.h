@@ -3,11 +3,11 @@
 
 #include "projectile.h"
 
-class Fireball : public projectile {
+class FireBall : public Projectile {
 private:
     
 public:
-    Fireball(int);
+    FireBall(int);
 };
 
 #endif /* defined(__nCurses__fireball__) */

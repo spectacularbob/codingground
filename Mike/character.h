@@ -14,8 +14,9 @@ protected:
     std::string head;
     std::string body;
     Direction facing;
-    int health;
 public:
+    Character();
+    int health;
     void onCollision(Drawable * other);
     bool collidesWith(Drawable * other);
     int getHealth();

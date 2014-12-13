@@ -22,7 +22,6 @@ public:
   int hit;
 protected:
     std::string figure;
-    int hit;
     int velocity;
 public:
     WeapType getWeapon();
